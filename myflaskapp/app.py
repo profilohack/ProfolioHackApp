@@ -2,6 +2,8 @@ from flask import Flask, render_template, url_for
 from data import Articles
 from forms import RegistrationForm
 import suggest
+import _yield
+from getData import getAllFiles
 
 app = Flask(__name__)
 
@@ -20,7 +22,9 @@ def batman():
     suggested_amount, net_income, customer_name = suggest.suggest("Bat Man")
     suggested_amount = round(suggested_amount,2)
     net_income = round(net_income,2)
-    return render_template('about.html',suggested_amount = suggested_amount, net_income = net_income, customer_name = customer_name)
+    returns = getAllFiles()
+    weights = _yield.covar(returns)
+    return render_template('about.html',suggested_amount = suggested_amount, net_income = net_income, customer_name = customer_name, weights = weights)
 
 """
 @app.route('/about')
