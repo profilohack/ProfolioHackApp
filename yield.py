@@ -38,11 +38,11 @@ def covar(returns):
     # a2 = returns[20].iloc[:, -1].values
     # np_returns = np.asarray([a1, a2])
     np_returns = [ret.iloc[:, -1].values for ret in returns]
-    for ret in np_returns:
-        print(ret.shape)
+    # for ret in np_returns:
+    #     print(ret.shape)
     omega = np.cov(np_returns)
     mu = np.array(np.mean(np_returns, axis=1))
-    print(omega.shape, mu.shape, mu.T @ omega)
+    # print(omega.shape, mu.shape, mu.T @ omega)
 
     #
     a = np.ones(mu.shape).T @ np.linalg.solve(omega, np.ones(mu.shape))
@@ -55,7 +55,7 @@ def covar(returns):
     lambda_2 = (a * mu_p - b) / delta
 
     weights = np.linalg.solve(omega, lambda_1 * np.ones(mu.shape) + lambda_2 * mu)
-    print(weights)
+    # print(sum(weights)
     return weights
 
 if __name__ == "__main__":

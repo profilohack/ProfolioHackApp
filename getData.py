@@ -11,9 +11,10 @@ def getData(filename):
 def getAllFiles():
     filelist = glob.glob("csv-test/"+"*.csv")
     # print(getData(file))
+    
     out = [getData(file) for file in filelist]
-    # for ret in out:
-    #     print(ret.size())
+    # for file in filelist:
+    #     print(file, getData(file).shape)
     # print(out)
     return out
 
