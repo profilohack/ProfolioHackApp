@@ -10,9 +10,10 @@ def getData(filename):
 
 def getAllFiles():
     filelist = glob.glob("csv/"+"*.csv")
-    for file in filelist:
-        print(file)
-        getData(file)
+        # print(file)
+    out = [getData(file) for file in filelist]
+    print(out)
+    return out
 
 getAllFiles()
 #getData("csv/IGGBR10D.csv")
