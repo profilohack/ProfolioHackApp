@@ -12,7 +12,7 @@ def getAllFiles():
     filelist = glob.glob("csv/"+"*.csv")
         # print(file)
     out = [getData(file) for file in filelist]
-    print(out)
+    # print(out)
     return out
 
 getAllFiles()
