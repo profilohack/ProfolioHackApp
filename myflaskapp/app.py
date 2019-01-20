@@ -10,6 +10,10 @@ Articles = Articles()
 @app.route('/')
 def index():
     return render_template('home.html')
+"""
+@app.route('/about')
+def chart():
+    return render_template('chart.html')"""
 
 @app.route('/about')
 def batman():
@@ -17,6 +21,7 @@ def batman():
     suggested_amount = round(suggested_amount,2)
     net_income = round(net_income,2)
     return render_template('about.html',suggested_amount = suggested_amount, net_income = net_income, customer_name = customer_name)
+
 """
 @app.route('/about')
 def about():
@@ -25,10 +30,23 @@ def about():
 @app.route('/articles')
 def articles():
     return render_template('articles.html', articles = Articles)
+"""
+@app.route('/articles')
+def articles():
+    return render_template('line.html')"""
 
-@app.route('/article/<string:id>/')
-def article(id):
-    return render_template('article.html', id=id)
+
+@app.route('/article/Bonds/')
+def bonds():
+    return render_template('bonds.html')
+
+@app.route('/article/Mutual Funds/')
+def mutual():
+    return render_template('mutual.html')
+
+@app.route('/article/Stocks/')
+def stocks():
+    return render_template('stocks.html')
     
 @app.route("/register")
 def register():
