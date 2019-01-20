@@ -34,10 +34,12 @@ def covar(returns):
     # TODO
     if len(returns) == 1:
         return np.asarray([1])
-    a1 = returns[11].iloc[:, -1].values
-    a2 = returns[20].iloc[:, -1].values
-    np_returns = np.asarray([a1, a2])
-    
+    # a1 = returns[11].iloc[:, -1].values
+    # a2 = returns[20].iloc[:, -1].values
+    # np_returns = np.asarray([a1, a2])
+    np_returns = [ret.iloc[:, -1].values for ret in returns]
+    for ret in np_returns:
+        print(ret.shape)
     omega = np.cov(np_returns)
     mu = np.array(np.mean(np_returns, axis=1))
     print(omega.shape, mu.shape, mu.T @ omega)
@@ -63,7 +65,7 @@ if __name__ == "__main__":
     
     # print([mean_var_year(df, num_years) for num_years in [10, 5, 3, 1]])
     # print([mean_var_month(df, num_months) for num_months in [6, 3, 1]])
-    covar()
+    covar(returns)
     # print(last_10_years, last_5_years, last_3_years, last_year, last_6_months, last_3_months, last_month)
     # pt = pd.pivot_table(df, values=["Date", "Close"], aggfunc=np.mean, columns="Date")
     # print(pt)

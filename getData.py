@@ -9,16 +9,15 @@ def getData(filename):
     return df
 
 def getAllFiles():
-    filelist = glob.glob("csv/"+"*.csv")
-        # print(file)
+    filelist = glob.glob("csv-test/"+"*.csv")
+    # print(getData(file))
     out = [getData(file) for file in filelist]
-<<<<<<< HEAD
-=======
+    # for ret in out:
+    #     print(ret.size())
     # print(out)
->>>>>>> 1abcd333db6ba286203a1dabb8a40449f6d850da
     return out
 
 
 #getAllFiles()
-getData("csv/IGGBR10D.csv")
+# getData("csv/IGGBR10D.csv")
 
