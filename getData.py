@@ -17,7 +17,6 @@ def getAllFiles():
     # print(out)
     return out
 
-
 #getAllFiles()
 # getData("csv/IGGBR10D.csv")
 
