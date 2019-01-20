@@ -3,6 +3,10 @@ import pandas as pd
 import numpy as np
 from decimal import Decimal
 
+def convert(s):
+    a = Decimal(s[1:-1])
+    return -a
+
 df = pd.read_csv("SampleTransactionDataset.csv",  converters={
             "Spending": convert,
             "Income": Decimal
@@ -11,11 +15,6 @@ df = pd.read_csv("SampleTransactionDataset.csv",  converters={
 df = df.iloc[:, :-2]
 # df.loc[:, "Spending"] = df.loc[:, "Spending"][1:-1]
 df.loc[:, "Total Amount"] = df.loc[:, "Spending"] + df.loc[:, "Income"]
-
-
-def convert(s):
-    a = Decimal(s[1:-1])
-    return -a
 
 
 def suggest(customer_name):
