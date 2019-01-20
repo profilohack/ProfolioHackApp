@@ -1,0 +1,50 @@
+﻿{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>{{customer_name}}</h1>
+  <p>"As a baby boomer with a 6 figure income, I want to understand how my financial habits are trending towards a 
+  stable future in my later years."</p>
+  <p>Batman is a Senior Sales Manager. He is constantly on the road and has an uncontrolled spending behavior. 
+   He loves to drive his car and always keeps it clean. He rents vacation properties on a monthly basis but he is 
+   rarely able to take time off and travel to the property. He is looking at ways to change his spending behavior 
+   and have something more stable where he can budget and save better for the future in case something happens to 
+   his health and he can no longer keep up this lifestyle.</p>
+  <h5>Net Income: ${{net_income}}</h5>
+  <h5>Suggested Investment: ${{suggested_amount}}</h5> 
+  <h5>Suggestions/ Spending Tips: Take it easy on the five star hotels. </h5>
+
+  <meta charset="UTF-8">
+<script type="text/javascript">
+window.onload = function() {
+
+var options = {
+	title: {
+		text: "Expenditure Breakdown"
+	},
+	data: [{
+			type: "pie",
+			startAngle: 45,
+			showInLegend: "true",
+			legendText: "{label}",
+			indexLabel: "{label} ({y})",
+			yValueFormatString:"#,##0.#"%"",
+			dataPoints: [
+				{ label: "Boat Supply", y: .432 },
+				{ label: "eTransfer - Vacation Property Rental", y: 63.2 },
+				{ label: "Hotels & Motels", y: 3.9 },
+				{ label: "Services - Marketing", y: 5.95 },
+				{ label: "Retail - Books & Household", y: 26.5 }
+			]
+	}]
+};
+$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+
+  
+{% endblock %}

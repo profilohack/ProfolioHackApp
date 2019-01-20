@@ -1,0 +1,56 @@
+﻿﻿{% extends 'layout.html' %}
+
+
+
+{% block body %}
+  
+
+  <h1>BONDS</h1>
+<head>  
+<script>
+window.onload = function () {
+
+var options = {
+	animationEnabled: true,  
+	title:{
+		text: "United Kingdom 10 Years Government Bond Yield"
+	},
+	axisX: {
+		valueFormatString: "MMM"
+	},
+	axisY: {
+		title: "Yields",
+		prefix: "%",
+		includeZero: false
+	},
+	data: [{
+		yValueFormatString: "$#,###",
+		xValueFormatString: "MMMM",
+		type: "spline",
+		dataPoints: [
+			{ x: new Date(2018, 0), y: 1.205 },
+			{ x: new Date(2018, 1), y: 1.454 },
+			{ x: new Date(2018, 2), y: 1.543 },
+			{ x: new Date(2018, 3), y: 1.361 },
+			{ x: new Date(2018, 4), y: 1.437 },
+			{ x: new Date(2018, 5), y: 1.276 },
+			{ x: new Date(2018, 6), y: 1.341 },
+			{ x: new Date(2018, 7), y: 1.432 },
+			{ x: new Date(2018, 8), y: 1.57 },
+			{ x: new Date(2018, 9), y: 1.356 },
+			{ x: new Date(2018, 10), y: 1.246 },
+			{ x: new Date(2018, 11), y: 1.246 }
+		]
+	}]
+};
+$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+{% endblock %}

@@ -1,0 +1,56 @@
+﻿﻿{% extends 'layout.html' %}
+
+
+
+{% block body %}
+  
+
+  <h1>Mutual Funds</h1>
+<head>  
+<script>
+window.onload = function () {
+
+var options = {
+	animationEnabled: true,  
+	title:{
+		text: "CIBC Mgd Bal Growth Pf - Monthly Returns"
+	},
+	axisX: {
+		valueFormatString: "MMM"
+	},
+	axisY: {
+		title: "Yields",
+		prefix: "%",
+		includeZero: false
+	},
+	data: [{
+		yValueFormatString: "$#,###",
+		xValueFormatString: "MMMM",
+		type: "spline",
+		dataPoints: [
+			{ x: new Date(2018, 0), y: -0.092424387},
+			{ x: new Date(2018, 1), y: -0.17810812},
+			{ x: new Date(2018, 2), y: 1.493984117},
+			{ x: new Date(2018, 3), y: 0.777191196},
+			{ x: new Date(2018, 4), y: 0.579569775},
+			{ x: new Date(2018, 5), y: 0.487698807},
+			{ x: new Date(2018, 6), y: -1.275155337},
+			{ x: new Date(2018, 7), y: -4.409270479},
+			{ x: new Date(2018, 8), y: 1.315171698},
+			{ x: new Date(2018, 9), y: -4.494581822},
+			{ x: new Date(2018, 10), y: 0 },
+			{ x: new Date(2018, 11), y: 2.072354687}
+		]
+	}]
+};
+$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+{% endblock %}

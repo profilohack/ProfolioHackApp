@@ -21,7 +21,7 @@ def suggest(customer_name):
     net_income = df[df.loc[:, "Account"] == customer_name].loc[:, "Total Amount"].sum()
     suggested_amount = (Decimal(0.5) * net_income / Decimal(12))
     print("{}, I suggest you invest ${:2f} per month".format(customer_name, suggested_amount))
-    return suggested_amount, net_income
+    return suggested_amount, net_income, customer_name
 
 
 if __name__ == "__main__":
